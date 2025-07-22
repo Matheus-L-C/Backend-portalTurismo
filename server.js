@@ -2,14 +2,18 @@
 const sequelize = require('./config/db');
 require('dotenv').config();
 const express = require('express')
- 
+const cors = require('cors'); 
+
 const userRoutes = require('./routes/userRoutes')
 const contactRoutes = require('./routes/contactRoutes')
 const authRoutes = require('./routes/authRouters') 
 
+
 const app = express();
  
 app.use(express.json());
+
+app.use(cors());
  
 app.get('/', (req, res)=> res.send('api funcionando'))
  
